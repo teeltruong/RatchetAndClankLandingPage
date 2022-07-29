@@ -1,0 +1,213 @@
+@use "../../../scss/" as *;
+
+.welcome {
+    &__content {
+        @include flex(center, center);
+    }
+
+    &__info,
+    &__img {
+        width: 50%;
+        height: 100%;
+    }
+
+    &__info {
+        @include flex(flex-start, flex-end);
+
+        &__content {
+            padding-left: 15rem;
+
+            .title {
+                font-family: $title02;
+
+                .main-color{
+                    background: url(https://images.unsplash.com/photo-1597177216409-a474906dfea4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 );
+  	                -webkit-background-clip: text;
+                    background-size: contain;
+                    width: 100%;
+                    color: #6dfff566;
+                    font-weight: 900;
+                    font-size: 4rem;
+                 }
+
+                 &::before {
+                    content: attr(data-heading);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    background: linear-gradient(45deg, rgba(255,255,255,0) 75%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    mix-blend-mode: screen;
+                    animation: shine 1s infinite;
+                    background-size: 200%;
+                    text-shadow: 
+                        2px 2px 10px rgba(#000, 0.2),
+                        -2px 2px 10px rgba(#000, 0.2),
+                        -2px -2px 10px rgba(#000, 0.2);
+                }
+            }
+            
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .btns > * ~ * {
+                margin-left: 2rem;
+            }
+
+            .btn__playnow {
+                position: relative;
+                display: inline-block;
+                padding: 20px 35px;
+                color: #fff;
+                font-size: 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+                overflow: hidden;
+                transition: .5s;
+                margin-top: 40px;
+                letter-spacing: 4px;
+                border-radius: 5px;
+                background: transparent;
+            }
+
+            .btn__playnow:hover{
+                background: linear-gradient(26deg, #f0c209 0%, #f0a105 100%);
+                color: #fff;
+                border-radius: 5px;
+                // box-shadow: 0 0 5px #03e9f4,
+                //             0 0 25px #03e9f4,
+                //             0 0 50px #03e9f4,
+                //             0 0 100px #03e9f4;
+            }
+
+            .btn__playnow span{
+                position: absolute;
+                display: block;
+
+                
+            }
+
+            .btn__playnow span:nth-child(1){
+                top:0;
+                left: -100%;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #f0c209);
+                animation: btn-anim1 1s linear infinite;
+            }
+
+            @keyframes btn-anim1 {
+                0% {
+                    left: -100%;
+                }
+                50%,100% {
+                    left: 100%;
+                }
+            }
+
+            .btn__playnow span:nth-child(2){
+                top: -100%;
+                right: 0;
+                width: 3px;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, #f0c209);
+                animation: btn-anim2 1s linear infinite;
+            }
+
+            @keyframes btn-anim2 {
+                0% {
+                    top: -100%;
+                  }
+                  50%,100% {
+                    top: 100%;
+                  }
+                
+            }
+
+            .btn__playnow span:nth-child(3)
+            {
+                bottom: 0;
+                right: -100%;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #f0c209);
+                animation: btn-anim3 1s linear infinite;
+            }
+
+            @keyframes btn-anim3 {
+                0%{
+                    right: -100%
+                }
+                50%,100%{
+                    right: 100%
+                }
+            }
+
+            .btn__playnow span:nth-child(4)
+            {
+                bottom: -100%;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, #f0c209);
+                animation: btn-anim4 1s linear infinite;
+            }
+
+            @keyframes btn-anim4 {
+                0%{
+                    bottom: -100%
+                }
+                50%,100%{
+                    bottom: 100%
+                }
+            }
+
+
+            .btn__getstarted{
+                position: relative;
+                display: inline-block;
+                padding: 20px 35px;
+                font-size: 20px;
+                background: linear-gradient(26deg, #0ac1b0 0%, #a0eceb 100%);
+                border-radius: 5px;
+                // box-shadow: 0 0 5px #f0c209,
+                //             0 0 5px #f0c209,
+                //             0 0 5px #f0a105,
+                //             0 0 10px #f0a105;
+            }
+
+            .btn__getstarted:hover{
+                background: linear-gradient(36deg, #f0a105 0%, #f0c209 100%);
+            }
+
+        }
+    }
+
+    &__img {
+        @include flex(flex-end, flex-start);
+
+        &__slide {
+            height: 900px;
+            width: 900px;
+            overflow: hidden;
+
+            canvas {
+                display: block;
+            }
+        }
+    }
+}
+
+.overlay-purple::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgb(109 82 197 / 64%);
+    background-image: linear-gradient(to right, rgb(91 66 172 / 81%), rgb(69 164 195 / 64%));}

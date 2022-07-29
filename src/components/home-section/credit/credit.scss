@@ -1,0 +1,55 @@
+@use "../../../scss/" as *;
+
+.credit {
+    height: 100%;
+    overflow: hidden;
+    @include flex(center, center);
+
+    video {
+        position: absolute;
+        width: fit-content;
+    }
+
+    &__content {
+        position: relative;
+
+        .title {
+            text-align: center;
+        }
+
+        .btns > * ~ * {
+            margin-left: 1rem;
+        }
+
+        .title {
+            font-family: $title02;
+
+            .main-color{
+                background: url(https://images.unsplash.com/photo-1597177216409-a474906dfea4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 );
+                  -webkit-background-clip: text;
+                background-size: contain;
+                width: 100%;
+                color: #6dfff566;
+                font-weight: 900;
+ 
+            }
+        }
+
+        .btn__see_more{
+            position: relative;
+            display: inline-block;
+            padding: 20px 35px;
+            font-size: 20px;
+            background: linear-gradient(26deg, #0ac1b0 0%, #a0eceb 100%);
+            border-radius: 5px;
+            // box-shadow: 0 0 5px #f0c209,
+            //             0 0 5px #f0c209,
+            //             0 0 5px #f0a105,
+            //             0 0 10px #f0a105;
+        }
+
+        .btn__see_more:hover{
+            background: linear-gradient(36deg, #f0a105 0%, #f0c209 100%);
+        }
+    }
+}
