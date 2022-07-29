@@ -1,3 +1,5 @@
+# Ratchet & Clank Landing page 
+  ReactJS Game Landing Page
 
 # Preview landing page
 ![2022-07-29](https://user-images.githubusercontent.com/69300939/181690984-3588113c-6c30-4336-bff8-8f3f4cee8b1a.png)
